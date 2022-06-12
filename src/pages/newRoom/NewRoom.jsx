@@ -11,7 +11,7 @@ const NewRoom = () => {
 
   const [info, setInfo] = useState({});
 
-  const [hotelId, setHotelId] = useState(null);
+  const [hotelId, setHotelId] = useState(undefined);
 
   const [rooms, setRooms] = useState([]);
 
@@ -21,7 +21,7 @@ const NewRoom = () => {
   console.log(data)
 
   const handleChange = (e) => {
-    setInfo(prev => ({ ...prev, [e.target.id]: e.target.value }));
+    setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   const handleClick = async (e) => {
@@ -67,9 +67,9 @@ const NewRoom = () => {
               <div className="formInput">
                 <label>Choose a hotel</label>
                 <select id="hotelId" onChange={(e) => setHotelId(e.target.value)}>
-                  {loading ? "Loading..." : data && data.map((hotel) => {
+                  {loading ? "Loading..." : data && data.map((hotel) => (
                     <option key={hotel._id} value={hotel._id}>{hotel.name}</option>
-                  })}
+                  ))}
                 </select>
               </div> 
 

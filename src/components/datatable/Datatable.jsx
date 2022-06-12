@@ -25,7 +25,7 @@ const Datatable = ({ columns }) => {
     const handleDelete = async (id) => {
 
         try {
-            await axios.delete(`/api/${path}/${id}`);
+            await axios.delete(`/api/${path}/${id}`); // Wont work for room becos room has different api url
 
             setList(list.filter(item => item._id !== id));
         } catch (err) {
