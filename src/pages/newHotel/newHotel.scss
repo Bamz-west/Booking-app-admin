@@ -33,13 +33,21 @@
             
             .right {
                 flex: 2;
-                padding: 0 20px;
 
                 form {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-between;
                     gap: 20px;
+
+                    .selectRooms {
+                        width: 100%;
+
+                        select {
+                            width: 100%;
+                            padding: 10px;
+                        }
+                    }
 
                     .formInput {
                         width: 40%;
